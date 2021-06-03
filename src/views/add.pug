@@ -1,0 +1,8 @@
+extends layouts/index
+
+block content
+    form(method="POST")
+        input(type='text' placeholder='Title' name='title' required)
+        textarea(rows=4 placeholder='Synopsis' name='synopsis' required)
+        input(type='text' placeholder='Genres' name='genres' required)
+        button Add Movie

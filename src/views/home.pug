@@ -1,0 +1,8 @@
+extends layouts/index.pug
+include mixins/each
+
+block content
+    include partials/input
+    each item in getMovies()
+        +movie(item)
+        

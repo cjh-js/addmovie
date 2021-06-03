@@ -1,0 +1,8 @@
+extends layouts/index.pug
+
+block content
+    h4=movie.synopsis
+    ul 
+        each genre in movie.genres
+            li 
+                h7=genre

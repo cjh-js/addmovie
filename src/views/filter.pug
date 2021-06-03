@@ -1,0 +1,15 @@
+extends layouts/filterIndex
+include mixins/each
+
+block content
+    include partials/input
+    if !year && rating
+        each item in getMovieByMinimumRating(rating)
+            +movie(item)
+    else if year && !rating
+        each item in getMovieByMinimumYear(year)
+            +movie(item)
+    else if !year && !rating
+    else 
+        each item in getMovieByMinimumYear(year).filter(movie => getMovieByMinimumRating(rating).includes(movie))
+            +movie(item)

@@ -1,0 +1,23 @@
+html 
+    head 
+        if !year && rating
+            title Searching by rating
+        else if !rating && year
+            title Searching by year
+        else if !year && !rating
+            title Error
+        else 
+            title Searching by year N rating
+    body
+        include ../partials/nav.pug
+        if !year && rating
+            h1 Searching by rating: #{rating}
+        else if !rating && year
+            h1 Searching by year: #{year}
+        else if !year && !rating
+            h1 ❌ YOU FORGOT TO FILL THE Year OR Rating! ❌ 
+        else 
+            h1 Searching by year: #{year} N rating: #{rating}
+            
+        p 
+            block content
